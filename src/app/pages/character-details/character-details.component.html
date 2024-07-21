@@ -1,0 +1,31 @@
+<div class="container" *ngIf="person">
+  <button mat-button (click)="goBack()" class="back-button">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <h1 class="name">{{ person.name }}</h1>
+  <div class="information">
+    <p><strong>Birth Year:</strong> {{ person.birth_year }}</p>
+    <p><strong>Gender:</strong> {{ person.gender }}</p>
+  </div>
+
+  <h3 *ngIf="films.length > 0" class="title">Films</h3>
+  <ul>
+    <li *ngFor="let film of films">{{ film.title }}</li>
+  </ul>
+
+  <h3 *ngIf="species.length > 0" class="title">Species</h3>
+  <ul>
+    <li *ngFor="let specy of species">{{ specy.name }}</li>
+  </ul>
+
+  <h3 *ngIf="starships.length > 0" class="title">Starships</h3>
+  <ul>
+    <li *ngFor="let starship of starships">{{ starship.name }}</li>
+  </ul>
+
+  <h3 *ngIf="vehicles.length > 0" class="title">Vehicles</h3>
+  <ul>
+    <li *ngFor="let vehicle of vehicles">{{ vehicle.name }}</li>
+  </ul>
+</div>

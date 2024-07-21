@@ -1,0 +1,70 @@
+.container {
+  background-color: #000000;
+  background-image: linear-gradient(#5843c1 1px, transparent 1px), linear-gradient(to right, #5843c1 1px, #000000 1px);
+  background-size: 20px 20px;
+  opacity: 1;
+  height: 100%;
+  padding: 5rem;
+  overflow-y: auto;
+}
+
+.back-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  color: yellow;
+  font-family: 'GT Pressura Mono', monospace;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: 'GT Pressura Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+
+p, ul {
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
