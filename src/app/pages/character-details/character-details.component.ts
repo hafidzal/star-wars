@@ -4,11 +4,12 @@ import { SwapiService } from '../../services/swapi.services';
 import { forkJoin } from 'rxjs';
 import { NgForOf, NgIf } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-character-details',
   standalone: true,
-  imports: [NgForOf, NgIf, MatIconModule],
+  imports: [NgForOf, NgIf, MatIconModule, MatProgressSpinnerModule],
   templateUrl: './character-details.component.html',
   styleUrl: './character-details.component.css'
 })
@@ -18,6 +19,7 @@ export class CharacterDetailsComponent {
   species: any[] = [];
   starships: any[] = [];
   vehicles: any[] = [];
+  isLoading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +31,7 @@ export class CharacterDetailsComponent {
     const id = idParam ? +idParam : 0;
 
     this.swapiService.getPerson(id).subscribe(person => {
+      this.isLoading = false;
       this.person = person;
       this.fetchDetails(person);
     });

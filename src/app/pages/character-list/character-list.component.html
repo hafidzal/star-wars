@@ -5,12 +5,17 @@
 </mat-toolbar>
 
 <div class="container">
-<div class="grid">
-  <mat-card *ngFor="let character of characters" (click)="goToDetail(character.url.split('/')[5])">
-    <mat-card-header>
-      <mat-card-title class="card-title">{{ character.name }}</mat-card-title>
-      <mat-card-subtitle class="card-sub-title">{{ character.gender }}, {{ character.birth_year }}</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
-</div>
+  <div *ngIf="isLoading" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+     <p>loading..</p>
+  </div>
+
+  <div *ngIf="!isLoading" class="grid">
+    <mat-card *ngFor="let character of characters" (click)="goToDetail(character.url.split('/')[5])">
+      <mat-card-header>
+        <mat-card-title class="card-title">{{ character.name }}</mat-card-title>
+        <mat-card-subtitle class="card-sub-title">{{ character.gender }}, {{ character.birth_year }}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
 </div>

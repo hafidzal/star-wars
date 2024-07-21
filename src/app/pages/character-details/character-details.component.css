@@ -8,6 +8,11 @@
   overflow-y: auto;
 }
 
+.loading-spinner {
+  color: white;
+  text-align: center;
+}
+
 .back-button {
   background-color: transparent;
   color: white;

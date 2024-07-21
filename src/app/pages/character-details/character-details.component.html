@@ -1,4 +1,4 @@
-<div class="container" *ngIf="person">
+<div class="container" *ngIf="person && !isLoading">
   <button mat-button (click)="goBack()" class="back-button">
     <mat-icon>arrow_back</mat-icon>
   </button>
@@ -28,4 +28,9 @@
   <ul>
     <li *ngFor="let vehicle of vehicles">{{ vehicle.name }}</li>
   </ul>
+</div>
+
+<div *ngIf="isLoading" class="loading-spinner">
+  <mat-spinner></mat-spinner>
+   <p>loading..</p>
 </div>
